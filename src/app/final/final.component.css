@@ -1,0 +1,12 @@
+.final_cls {
+    height: 200px;
+    /* background-color: #cadcf3; */
+    padding-top: 30px;
+}
+
+textarea {
+    max-width: 500px;
+    max-height: 120px;
+    min-width: 300px;
+    min-height: 100px;
+}

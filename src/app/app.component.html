@@ -1,0 +1,20 @@
+<div class="abv_cls">
+  <h1>
+    Hello {{ title }}!
+  </h1>
+  <!--  -->
+  <nav>
+    <a routerLink="/next">Read</a>
+    <a routerLink="/more">More</a>
+    <a routerLink="/">Back</a>
+  </nav>
+  <router-outlet></router-outlet>
+  <p class="btm_cls">Router Buttom</p>
+</div>
+<!-- <app-next></app-next> -->
+<!-- <div fxFlex="40">
+  <a mat-raised-button *ngFor="let item of menuItems" routerLink="{{item.link}}">
+    {{item.name | uppercase}}
+  </a>
+</div> -->
+

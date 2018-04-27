@@ -1,0 +1,18 @@
+<!-- <p>
+  more works!
+</p> -->
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title>ngfor 嵌套循环</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-row *ngFor="let item of msgs.data"></ion-row>
+  <ion-col *ngFor="let key of getKeys(item)">{{ item[key] }}</ion-col>
+</ion-content> -->
+<h4>Messages</h4>
+<p>Total:{{msgs.total}}</p>
+<div *ngFor="let item of msgs.data">
+  <b>{{item.name}}</b>:
+  <a>{{item.msg}}</a><p></p>
+</div>

@@ -1,0 +1,10 @@
+{
+    "total":2,
+    "data":[{
+        "name":"Bob",
+        "msg":"Hello, this is Bob."
+    },{
+        "name":"Alice",
+        "msg":"How is it going?"
+    }]
+}
