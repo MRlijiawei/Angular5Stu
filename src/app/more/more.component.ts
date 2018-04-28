@@ -11,9 +11,9 @@ export class MoreComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   url = "assets/messages.json";
-  getConfig() {
+  /* getConfig() {
     this.msgs = this.http.get(this.url);
-  }
+  } */
   ngOnInit() {
     this.msgs = this.http
       .get(this.url)

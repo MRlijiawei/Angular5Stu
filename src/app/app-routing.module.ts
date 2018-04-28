@@ -8,6 +8,7 @@ import { MoreComponent } from "./more/more.component";
 
 const routes: Routes = [
   { path: 'home', component: AppComponent },
+  { path: 'next/:id', component: NextComponent },
   { path: 'next', component: NextComponent },
   { path: 'more', component: MoreComponent },
   { path: 'final', component: FinalComponent }

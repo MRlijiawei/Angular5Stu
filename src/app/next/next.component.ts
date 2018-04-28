@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, ActivatedRoute } from '@angular/router';
 
 import { MessageService } from "../message.service";
 
@@ -10,18 +10,32 @@ import { MessageService } from "../message.service";
 })
 
 export class NextComponent implements OnInit {
-  router = {name:"Router", id:"routeId", message:"Empty"};
+  router = {name:"Router", id:"routeId", msg:"Empty"};
 
-  constructor(private messageService: MessageService) { }
+  constructor(private messageService: MessageService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    setTimeout(() => {
-      this.router.name = "routeAfterInit";
-      this.router.message = this.messageService.messages;
-      this.messageService.replaceMsg("replace");
-      console.log(this.messageService.messages);
-      this.router.message = this.messageService.messages;
-    }, 2000);
+    //let a = this.route.queryParams["id"];
+    let obj = this.route.queryParams["_value"];
+    console.log(obj);
+    if(obj && obj.id) {
+      this.router = obj;
+    } else {
+      setTimeout(() => {
+        this.router.name = "routeAfterInit";
+        this.router.msg = this.messageService.messages;
+        this.messageService.replaceMsg("replace");
+        console.log(this.messageService.messages);
+        this.router.msg = this.messageService.messages;
+      }, 2000);
+    }
+    /* this.route.params
+      .subscribe((params: Params) => {
+        this.id = params['id'];
+        console.log(this.id);
+        console.log('传值');
+        console.log(params)
+      }) */
   }
 
 }

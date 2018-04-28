@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { HttpClient } from "@angular/common/http";
 import { HttpParams } from "@angular/common/http";
+import { HttpHeaders} from "@angular/common/http";
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-final',
@@ -11,8 +13,9 @@ import { HttpParams } from "@angular/common/http";
 export class FinalComponent implements OnInit {
 
   thankWord = "Thank u for reading, and now please reply.";
+  replyId = '';
   private msg = "";
-  sendUrl = "assets/sendmsg.json";
+  sendUrl = "assets/sendMsg.json";
   sendMsg = function () {
     console.log(this.msg);
   }
@@ -26,7 +29,7 @@ export class FinalComponent implements OnInit {
   /* replyMsg = function() {
     console.log("replying");
   } */
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private route: ActivatedRoute) {
     this.sendMsg = function () {
       //1.捕获打印回复的信息，页面相应
       console.log("idea:" + this.msg);
@@ -40,12 +43,26 @@ export class FinalComponent implements OnInit {
           //document.getElementById('result').innerHTML += event.data + "<br/>";
           //that.thankWord = "Reply success.";
         //};
-        //const headers = new HttpHeaders().set("Content-Type", "application/json");
-        //2.使用post写入本地json文件-404
+        const headers = {
+          "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+          "Access-Control-Allow-Methods": "GET, POST, PUT,DELETE",
+          "Access-Control-Allow-Origin": "*"
+        };
+
+        //var headers = new HttpHeaders().set("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods");
+        
+        //headers.set("Access-Control-Allow-Methods", "GET, POST, PUT,DELETE");
+        //headers.set("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods");
+        //headers.set("Access-Control-Allow-Origin", "*");
+        //2.使用post写入本地json文件
         this.http
-          .put(this.sendUrl, {
+          .post(this.sendUrl
+            // + "/" + this.replyId
+          , {
             "replyMsg": this.msg
-          })
+          }
+          , {headers}
+          )
           //.subscribe(val => console.log('Value emitted successfully', val));
           .subscribe(
             //val => this.msgs = val,
@@ -63,6 +80,7 @@ export class FinalComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.replyId = this.route.queryParams["_value"].id;
   }
 
 }

@@ -14,5 +14,6 @@
 <p>Total:{{msgs.total}}</p>
 <div *ngFor="let item of msgs.data">
   <b>{{item.name}}</b>:
-  <a>{{item.msg}}</a><p></p>
+  <a [routerLink]="['/next',item.id]"  [queryParams]="{id:item.id, msg:item.msg, name:item.name}">{{item.msg}}</a>
+  <a routerLink="/final" [queryParams]="{id:item.id}">Reply</a><p></p>
 </div>
