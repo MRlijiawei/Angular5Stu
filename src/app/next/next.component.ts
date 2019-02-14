@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { RouterModule, Routes, ActivatedRoute } from '@angular/router';
 
 import { MessageService } from "../message.service";
+import { ViewEncapsulation } from "@angular/core";
 
 @Component({
   selector: 'app-next',
   templateUrl: './next.component.html',
-  styleUrls: ['./next.component.css']
+  styleUrls: ['./next.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 
 export class NextComponent implements OnInit {

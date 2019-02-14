@@ -4,11 +4,11 @@
 <p>
   {{router.id}}
 </p>
-<p>
+<p [el-class]="'msg_class'">
   {{router.msg}}
 </p>
 <a routerLink="/" >../</a>
 <!-- <a href="#">#</a><br> -->
-<a routerLink="/final">Reply</a>
+<a routerLink="/final" [queryParams]="{id:router.id}">Reply</a>
 <!-- <a routerLink="/home">Home</a> -->
 <!-- <app-final></app-final> -->

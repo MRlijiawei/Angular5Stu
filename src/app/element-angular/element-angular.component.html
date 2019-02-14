@@ -1,0 +1,109 @@
+<h2>Element Angular</h2>
+<div el-row gutter="20">
+  <div el-col [span]="6">
+    <div class="grid-content bg-purple">1</div>
+  </div>
+  <div el-col span="6">
+    <div class="grid-content bg-purple">2</div>
+  </div>
+  <div el-col span="6">
+    <div class="grid-content bg-purple">3</div>
+  </div>
+  <div el-col span="6">
+    <div class="grid-content bg-purple">4</div>
+  </div>
+</div>
+
+<div el-row gutter="20">
+  <div el-col [span]="16">
+    <div class="grid-content bg-purple"></div>
+  </div>
+  <div el-col [span]="8">
+    <div class="grid-content bg-purple"></div>
+  </div>
+</div>
+<div el-row :gutter="5">
+  <div el-col [span]="4">
+    <div class="grid-content bg-purple"></div>
+  </div>
+  <div el-col [span]="16">
+    <div class="grid-content bg-purple"></div>
+  </div>
+  <div el-col [span]="4">
+    <div class="grid-content bg-purple"></div>
+  </div>
+</div>
+
+<div el-row type="flex" class="row-bg">
+  <div el-col [span]="6">
+    <div class="grid-content bg-purple"></div>
+  </div>
+  <div el-col [span]="6">
+    <div class="grid-content bg-purple-light"></div>
+  </div>
+  <div el-col [span]="6">
+    <div class="grid-content bg-purple"></div>
+  </div>
+</div>
+<div el-row type="flex" class="row-bg" justify="center">
+  <div el-col [span]="6">
+    <div class="grid-content bg-purple"></div>
+  </div>
+  <div el-col [span]="6">
+    <div class="grid-content bg-purple-light"></div>
+  </div>
+  <div el-col [span]="6">
+    <div class="grid-content bg-purple"></div>
+  </div>
+</div>
+<div el-row type="flex" class="row-bg" justify="end">
+  <div el-col [span]="6">
+    <div class="grid-content bg-purple"></div>
+  </div>
+  <div el-col [span]="6">
+    <div class="grid-content bg-purple-light"></div>
+  </div>
+  <div el-col [span]="6">
+    <div class="grid-content bg-purple"></div>
+  </div>
+</div>
+<div el-row type="flex" class="row-bg" justify="space-between">
+  <div el-col [span]="6">
+    <div class="grid-content bg-purple"></div>
+  </div>
+  <div el-col [span]="6">
+    <div class="grid-content bg-purple-light"></div>
+  </div>
+  <div el-col [span]="6">
+    <div class="grid-content bg-purple"></div>
+  </div>
+</div>
+<div el-row type="flex" class="row-bg" justify="space-around">
+  <div el-col [span]="6">
+    <div class="grid-content bg-purple"></div>
+  </div>
+  <div el-col [span]="6">
+    <div class="grid-content bg-purple-light"></div>
+  </div>
+  <div el-col [span]="6">
+    <div class="grid-content bg-purple"></div>
+  </div>
+</div>
+
+<div el-container direction="vertical" class="demo-box">
+  <div el-header>Header</div>
+  <div el-container>
+    <div el-aside width="200px">Aside</div>
+    <div el-container direction="vertical">
+      <div el-main>Main</div>
+      <div el-footer>Footer</div>
+    </div>
+  </div>
+</div>
+
+<span class="icons">
+  <i class="el-icon-edit"></i>
+  <el-icon name="share"></el-icon>
+  <el-icon name="delete"></el-icon>
+</span>
+<el-button type="primary" icon="search">搜索</el-button>

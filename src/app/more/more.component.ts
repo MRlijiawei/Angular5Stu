@@ -15,7 +15,7 @@ export class MoreComponent implements OnInit {
     this.msgs = this.http.get(this.url);
   } */
   ngOnInit() {
-    this.msgs = this.http
+    this.http
       .get(this.url)
       //.subscribe(val => console.log('Value emitted successfully', val));
       .subscribe(
